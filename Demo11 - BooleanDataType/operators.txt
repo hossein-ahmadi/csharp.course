@@ -1,0 +1,16 @@
+Boolean	: [true|false]
+
+number = 50;
+number >= 10
+number <= 20
+
+AND	OR	NOT
+&&	||	!
+number >= 10 AND number <= 20
+number >= 10 OR number <= 20
+
+		AND	OR
+TRUE	TRUE	TRUE	TRUE	
+TRUE	FALSE	FALSE	TRUE
+FALSE	TRUE	FALSE	TRUE
+FALSE	FALSE	FALSE	FALSE

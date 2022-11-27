@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo11 - BooleanDataType", "Demo11 - BooleanDataType\Demo11 - BooleanDataType.csproj", "{13F4B8D5-999D-4CE1-AF8B-31DAC9CF6850}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13F4B8D5-999D-4CE1-AF8B-31DAC9CF6850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F4B8D5-999D-4CE1-AF8B-31DAC9CF6850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F4B8D5-999D-4CE1-AF8B-31DAC9CF6850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F4B8D5-999D-4CE1-AF8B-31DAC9CF6850}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABD64510-AF84-40AC-B488-0725A718AC0D}
+	EndGlobalSection
+EndGlobal
