@@ -21,7 +21,5 @@ else if (username == "ali" && password == "741")
 {
     Console.WriteLine("Welcome Ali...");
 }
-else
-{
+else // braces can be removed for single line statements
     Console.WriteLine("Sorry! Username or password is invalid...");
-}
