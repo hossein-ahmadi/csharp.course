@@ -1,4 +1,9 @@
-﻿// integer data types
+﻿/*
+ *  Demo06 - Variables (Integer data types)
+ *  CSharp Master Class (TOSINSO)
+ *  Hossein Ahmadi
+ */
+
 
 sbyte number1 = 12;
 sbyte number2 = -123;

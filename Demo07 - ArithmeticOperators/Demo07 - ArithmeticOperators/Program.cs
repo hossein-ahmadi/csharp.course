@@ -1,4 +1,8 @@
-﻿// Operators
+﻿/*
+ *  Demo07 - Arithmetic operators
+ *  CSharp Master Class (TOSINSO)
+ *  Hossein Ahmadi
+ */
 
 // Math binary operators
 Console.WriteLine("Math operators");

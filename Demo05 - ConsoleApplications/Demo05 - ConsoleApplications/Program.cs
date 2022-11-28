@@ -1,8 +1,7 @@
 ﻿/*
- * TOSINSO
- * CSharp Master Course
- * More about console applications
- * By: Hossein Ahmadi
+ *  Demo05 - Console Applications
+ *  CSharp Master Class (TOSINSO)
+ *  Hossein Ahmadi
  */
 Console.WriteLine("Hello, World!"); // Display output to console window
 Console.WriteLine("---------------------------");

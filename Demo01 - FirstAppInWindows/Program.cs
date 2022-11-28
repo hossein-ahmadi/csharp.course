@@ -1,2 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿/*
+ *  Demo01 - First console application
+ *  CSharp Master Class (TOSINSO)
+ *  Hossein Ahmadi
+ */
 Console.WriteLine("Hello, Welcome to TOSINSO C# Master class!");

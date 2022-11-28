@@ -1,5 +1,8 @@
-﻿// Simple calculator
-
+﻿/*
+ *  Demo13 - Simple calculator with if statement
+ *  CSharp Master Class (TOSINSO)
+ *  Hossein Ahmadi
+ */
 Console.WriteLine("Welcome to TOSINSO Calculator");
 Console.WriteLine("1. Add");
 Console.WriteLine("2. Subtract");

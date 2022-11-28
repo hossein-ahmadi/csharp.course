@@ -1,4 +1,10 @@
-﻿string firstName = "Hossein";
+﻿/*
+ *  Demo08 - String data type
+ *  CSharp Master Class (TOSINSO)
+ *  Hossein Ahmadi
+ */
+
+string firstName = "Hossein";
 string lastName = "Ahmadi";
 
 var fullName = firstName + " " + lastName;

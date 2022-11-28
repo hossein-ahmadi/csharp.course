@@ -1,4 +1,11 @@
-﻿// [datatype] [name];
+﻿/*
+ *  Demo06 - Variables (Introduction)
+ *  CSharp Master Class (TOSINSO)
+ *  Hossein Ahmadi
+ */
+
+
+// [datatype] [name];
 // [datatype] [name] = [value];
 
 string fullname = "Hossein Ahmadi from TOSINSO";

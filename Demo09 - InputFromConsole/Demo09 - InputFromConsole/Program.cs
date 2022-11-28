@@ -1,4 +1,10 @@
-﻿Console.Write("Your firstname: ");
+﻿/*
+ *  Demo09 - Input from console
+ *  CSharp Master Class (TOSINSO)
+ *  Hossein Ahmadi
+ */
+
+Console.Write("Your firstname: ");
 var firstName = Console.ReadLine();
 Console.Write("Your lastname: ");
 var lastName = Console.ReadLine();

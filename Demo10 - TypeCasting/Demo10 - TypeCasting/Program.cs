@@ -1,4 +1,8 @@
-﻿// Explicit cast string to int
+﻿/*
+ *  Demo10 - Type casting (Implicit and Explicit)
+ *  CSharp Master Class (TOSINSO)
+ *  Hossein Ahmadi
+ */
 
 Console.Write("First number: ");
 int n1 = int.Parse(Console.ReadLine());

@@ -1,5 +1,9 @@
-﻿// If Statement
-
+﻿/*
+ *  Demo12 - If statement
+ *  CSharp Master Class (TOSINSO)
+ *  Hossein Ahmadi
+ */
+ 
 Console.Write("Username: ");
 var username = Console.ReadLine();
 Console.Write("Password: ");

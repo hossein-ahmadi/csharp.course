@@ -1,4 +1,8 @@
-﻿// decimal data types
+﻿/*
+ *  Demo06 - Variables (Decimal and Double data types)
+ *  CSharp Master Class (TOSINSO)
+ *  Hossein Ahmadi
+ */
 
 // int number0 = 52.6; invalid value assignment
 

@@ -1,4 +1,11 @@
-﻿string myVar1 = "Hossein";
+﻿/*
+ *  Demo06 - Variables (var keyword)
+ *  CSharp Master Class (TOSINSO)
+ *  Hossein Ahmadi
+ */
+
+
+string myVar1 = "Hossein";
 int myVar2 = 12;
 decimal myVar3 = 189.3m;
 
