@@ -1,4 +1,10 @@
-﻿Console.WriteLine("Factorial");
+﻿/*
+ *  Demo20 - For Samples (Factorial)
+ *  CSharp Master Class (TOSINSO)
+ *  Hossein Ahmadi
+ */
+
+Console.WriteLine("Factorial");
 Console.WriteLine("--------------------");
 Console.WriteLine();
 

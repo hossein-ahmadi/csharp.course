@@ -1,4 +1,10 @@
-﻿Console.WriteLine("Sum of numbers");
+﻿/*
+ *  Demo20 - For Samples (Sum of numbers)
+ *  CSharp Master Class (TOSINSO)
+ *  Hossein Ahmadi
+ */
+
+Console.WriteLine("Sum of numbers");
 Console.WriteLine("------------------");
 Console.WriteLine();
 Console.Write("How many numbers: ");
