@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo44 - ReadonlyKeyword", "Demo44 - ReadonlyKeyword\Demo44 - ReadonlyKeyword.csproj", "{A038E4D2-4D0D-4CB7-A639-78FB9E11E1FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A038E4D2-4D0D-4CB7-A639-78FB9E11E1FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A038E4D2-4D0D-4CB7-A639-78FB9E11E1FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A038E4D2-4D0D-4CB7-A639-78FB9E11E1FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A038E4D2-4D0D-4CB7-A639-78FB9E11E1FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {931EF442-4E4C-45FF-BF04-E7AFE6CA53FD}
+	EndGlobalSection
+EndGlobal
