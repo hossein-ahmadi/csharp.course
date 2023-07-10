@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo55 - CalcWithOOP", "Demo55 - CalcWithOOP\Demo55 - CalcWithOOP.csproj", "{C153D1E9-1503-41EA-B236-083EBFBEE268}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C153D1E9-1503-41EA-B236-083EBFBEE268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C153D1E9-1503-41EA-B236-083EBFBEE268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C153D1E9-1503-41EA-B236-083EBFBEE268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C153D1E9-1503-41EA-B236-083EBFBEE268}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {752F3B3F-CB00-48F2-8C8E-8B256333399F}
+	EndGlobalSection
+EndGlobal
