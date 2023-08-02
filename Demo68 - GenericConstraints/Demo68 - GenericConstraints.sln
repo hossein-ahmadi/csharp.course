@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo68 - GenericConstraints", "Demo68 - GenericConstraints\Demo68 - GenericConstraints.csproj", "{57174780-439C-4E25-8E9F-944CBAC1F506}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57174780-439C-4E25-8E9F-944CBAC1F506}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57174780-439C-4E25-8E9F-944CBAC1F506}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57174780-439C-4E25-8E9F-944CBAC1F506}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57174780-439C-4E25-8E9F-944CBAC1F506}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1BE7DB6-6FE6-4A9D-95EE-6B7722D9FBD4}
+	EndGlobalSection
+EndGlobal
