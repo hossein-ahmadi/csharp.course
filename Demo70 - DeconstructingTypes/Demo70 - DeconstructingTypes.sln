@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo70 - DeconstructingTypes", "Demo70 - DeconstructingTypes\Demo70 - DeconstructingTypes.csproj", "{9DB09B05-73AA-4B67-B214-A2E60F90A9B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DB09B05-73AA-4B67-B214-A2E60F90A9B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DB09B05-73AA-4B67-B214-A2E60F90A9B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DB09B05-73AA-4B67-B214-A2E60F90A9B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DB09B05-73AA-4B67-B214-A2E60F90A9B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E600CCD6-69CB-46FF-B512-D9EB4D8671DC}
+	EndGlobalSection
+EndGlobal
