@@ -1,0 +1,14 @@
+CREATE DATABASE AccountingDB;
+GO
+
+USE AccountingDB;
+GO
+
+CREATE TABLE Users
+(
+	[Id] INT IDENTITY NOT NULL PRIMARY KEY,
+	[Username] VARCHAR(100) NOT NULL,
+	[Password] VARCHAR(100) NOT NULL,
+	[RegisterDate] DATETIME NOT NULL
+);
+GO
