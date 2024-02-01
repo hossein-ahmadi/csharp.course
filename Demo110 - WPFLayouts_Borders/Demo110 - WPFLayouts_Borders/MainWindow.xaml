@@ -7,5 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Border Margin="10" Padding="10" Width="150" HorizontalAlignment="Left" Background="Purple" BorderBrush="Purple" BorderThickness="1" CornerRadius="10">
+            <StackPanel>
+                <Button Height="50" Background="Transparent" BorderThickness="0" Foreground="White">Item1</Button>
+                <Button Height="50" Background="Transparent" BorderThickness="0" Foreground="White">Item2</Button>
+                <Button Height="50" Background="Transparent" BorderThickness="0" Foreground="White">Item3</Button>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>
