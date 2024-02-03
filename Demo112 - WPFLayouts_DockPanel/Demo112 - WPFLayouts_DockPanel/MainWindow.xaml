@@ -1,0 +1,20 @@
+﻿<Window x:Class="Demo112___WPFLayouts_DockPanel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo112___WPFLayouts_DockPanel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel LastChildFill="True">
+        <Border Padding="5" DockPanel.Dock="Bottom">
+            <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
+                <Button Width="100" Height="30" Margin="0 0 10 0">Ok</Button>
+                <Button Width="100" Height="30">Cancel</Button>
+            </StackPanel>
+        </Border>
+        <Border DockPanel.Dock="Top" Padding="5">
+            <TextBox></TextBox>
+        </Border>
+    </DockPanel>
+</Window>

@@ -1,0 +1,14 @@
+﻿<Window x:Class="Demo116___WPFLayouts_Other.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo116___WPFLayouts_Other"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="325" Width="555">
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <Button x:Name="UniformGridButton" Click="UniformGridButton_OnClick" Width="100" Height="30" Margin="5">Uniform Grid</Button>
+        <Button x:Name="CanvasButton" Click="CanvasButton_OnClick" Width="100" Height="30" Margin="5">Canvas</Button>
+        <Button x:Name="GridSplitterButton" Click="GridSplitterButton_OnClick" Width="100" Height="30" Margin="5">Grid Splitter</Button>
+    </StackPanel>
+</Window>

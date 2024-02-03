@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo115 - WPFLayouts_GridSample", "Demo115 - WPFLayouts_GridSample\Demo115 - WPFLayouts_GridSample.csproj", "{7CCF3FA9-10B6-44FC-BF59-DF8FFDC8DB2E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CCF3FA9-10B6-44FC-BF59-DF8FFDC8DB2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CCF3FA9-10B6-44FC-BF59-DF8FFDC8DB2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CCF3FA9-10B6-44FC-BF59-DF8FFDC8DB2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CCF3FA9-10B6-44FC-BF59-DF8FFDC8DB2E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB607DE3-0C12-4F48-BA62-88A71CA55AD1}
+	EndGlobalSection
+EndGlobal

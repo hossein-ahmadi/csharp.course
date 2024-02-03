@@ -1,0 +1,39 @@
+﻿<Window x:Class="Demo115___WPFLayouts_GridSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo115___WPFLayouts_GridSample"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="290" Width="655">
+    <Grid ShowGridLines="False" Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Firstname</Label>
+        <TextBox VerticalContentAlignment="Center" Grid.ColumnSpan="2" Margin="5" Grid.Row="0" Grid.Column="1" Height="35"></TextBox>
+        <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">Lastname</Label>
+        <TextBox VerticalContentAlignment="Center" Grid.ColumnSpan="2" Margin="5" Grid.Row="1" Grid.Column="1" Height="35"></TextBox>
+        <Label Grid.Row="2" Grid.Column="0" VerticalAlignment="Center">Role</Label>
+        <TextBox VerticalContentAlignment="Center" Margin="5" Grid.Row="2" Grid.Column="1" Height="35"></TextBox>
+        <Button Grid.Row="2" Grid.Column="2" Width="100" Height="35" Margin="5">Browse...</Button>
+        <Label Grid.Row="3" Grid.Column="0" VerticalAlignment="Center">Sex</Label>
+        <ComboBox VerticalContentAlignment="Center" Grid.ColumnSpan="2" Margin="5" Grid.Row="3" Grid.Column="1" Height="35">
+            <ComboBoxItem>Male</ComboBoxItem>
+            <ComboBoxItem>Female</ComboBoxItem>
+        </ComboBox>
+        <StackPanel Grid.ColumnSpan="3" Orientation="Horizontal" FlowDirection="RightToLeft" Grid.Row="4" Grid.Column="0">
+            <Button Width="100" Height="35" Margin="5">Accept</Button>
+            <Button Width="100" Height="35">Cancel</Button>
+        </StackPanel>
+    </Grid>
+</Window>

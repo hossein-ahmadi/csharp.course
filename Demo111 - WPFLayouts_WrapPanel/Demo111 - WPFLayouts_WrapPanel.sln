@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo111 - WPFLayouts_WrapPanel", "Demo111 - WPFLayouts_WrapPanel\Demo111 - WPFLayouts_WrapPanel.csproj", "{2EB473BB-0BA5-4440-B38D-210FE0A1B60F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EB473BB-0BA5-4440-B38D-210FE0A1B60F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EB473BB-0BA5-4440-B38D-210FE0A1B60F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EB473BB-0BA5-4440-B38D-210FE0A1B60F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EB473BB-0BA5-4440-B38D-210FE0A1B60F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A4A250D-ABBE-4440-8F4B-9EE3BF76F512}
+	EndGlobalSection
+EndGlobal
