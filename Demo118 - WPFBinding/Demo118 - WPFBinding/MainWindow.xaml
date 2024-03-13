@@ -1,0 +1,23 @@
+﻿<Window x:Class="Demo118___WPFBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo118___WPFBinding"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="470" FontSize="15">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Border HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel HorizontalAlignment="Left" x:Name="EditorStackPanel">
+                <Label>Firstname</Label>
+                <TextBox Width="200" Text="{Binding Path=Firstname}" IsEnabled="{Binding ElementName=EnableEditorCheckBox, Path=IsChecked}"></TextBox>
+                <Label>Lastname</Label>
+                <TextBox Width="200" Text="{Binding Path=Lastname}" IsEnabled="{Binding ElementName=EnableEditorCheckBox, Path=IsChecked}"></TextBox>
+                <Label>Email</Label>
+                <TextBox Width="200" Text="{Binding Path=Email}" IsEnabled="{Binding ElementName=EnableEditorCheckBox, Path=IsChecked}"></TextBox>
+                <Button Click="ShowNameButton_OnClick" Name="ShowNameButton" IsEnabled="{Binding ElementName=EnableEditorCheckBox, Path=IsChecked}" Margin="0 10 0 10">Show Fullname</Button>
+                <CheckBox IsChecked="True" Name="EnableEditorCheckBox" FontSize="12">Editor Enabled</CheckBox>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
