@@ -11,10 +11,10 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="0" Margin="5 5 5 0" Name="ItemsListView">
+        <ListView Grid.Row="0" Margin="5 5 5 0" Name="ItemsListView" MouseDoubleClick="ItemsListView_OnMouseDoubleClick">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" Name="ListViewItemStackPanel">
                         <Image Source="{Binding Thumbnail}" Width="20" Height="20" Margin="0 0 10 0" VerticalAlignment="Center"></Image>
                         <TextBlock Text="{Binding Name}" VerticalAlignment="Center"></TextBlock>
                     </StackPanel>
