@@ -1,4 +1,6 @@
-﻿namespace Demo120___WorkingWithFilesAndFolders.Models;
+﻿using System.IO;
+
+namespace Demo120___WorkingWithFilesAndFolders.Models;
 
 public abstract class ExplorerItemBase
 {
@@ -24,5 +26,22 @@ public class ExplorerFolderItem : ExplorerItemBase
 
 public class ExplorerFileItem : ExplorerItemBase
 {
-    public override string Thumbnail => "Images/unknown-file.png";
+    public override string Thumbnail
+    {
+        get
+        {
+            var fileExtension = Path.GetExtension(Name)?.ToLower().Trim();
+
+            if (fileExtension == null)
+                return "Images/unknown-file.png";
+
+            switch (fileExtension)
+            {
+                case ".txt":
+                    return "Images/text-file.png";
+                default:
+                    return "Images/unknown-file.png";
+            }
+        }
+    }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Demo120___WorkingWithFilesAndFolders"
         mc:Ignorable="d"
-        Title="File Explorer" Height="450" Width="800">
+        Title="File Explorer" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
@@ -22,7 +22,8 @@
             </ListView.ItemTemplate>
         </ListView>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Width="100" Margin="5" Name="AddItemButton">Add Item</Button>
+            <Button Width="100" Margin="5" Name="NewFolderButton" Click="NewFolderButton_OnClick">New Folder</Button>
+            <Button Width="100" Margin="5" Name="NewFileButton" Click="NewFileButton_OnClick">New File</Button>
         </StackPanel>
     </Grid>
 </Window>

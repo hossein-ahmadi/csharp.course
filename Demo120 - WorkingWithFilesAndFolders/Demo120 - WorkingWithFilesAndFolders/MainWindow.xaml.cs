@@ -67,6 +67,17 @@ namespace Demo120___WorkingWithFilesAndFolders
                 {
                     CurrentPath = null;
                 }
+                else if (selectedItem is ExplorerFileItem fileItem)
+                {
+                    var extension = Path.GetExtension(fileItem.Name)?.Trim().ToLower();
+
+                    if (extension == ".txt")
+                    {
+                        var editorWindow = new Views.TextEditorWindow();
+                        editorWindow.FilePath = Path.Combine(CurrentPath, fileItem.Name);
+                        editorWindow.ShowDialog();
+                    }
+                }
                 else
                 {
                     if (string.IsNullOrEmpty(CurrentPath))
@@ -78,6 +89,61 @@ namespace Demo120___WorkingWithFilesAndFolders
                         CurrentPath = Path.GetFullPath(Path.Combine(CurrentPath, selectedItem.Name));
                     }
                 }
+                LoadCurrentPath();
+            }
+        }
+
+        private void NewFolderButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(CurrentPath))
+            {
+                MessageBox.Show("You can't create folder here!");
+                return;
+            }
+            var getNameWindow = new Views.GetItemNameWindow();
+
+            getNameWindow.ShowDialog();
+
+            if (getNameWindow.DialogResult ?? false)
+            {
+                var directoryPath = Path.Combine(CurrentPath, getNameWindow.NameTextBox.Text);
+
+                if (Directory.Exists(directoryPath))
+                {
+                    MessageBox.Show($"Directory {getNameWindow.NameTextBox.Text} already exists!");
+                    return;
+                }
+
+                Directory.CreateDirectory(directoryPath);
+
+                LoadCurrentPath();
+            }
+        }
+
+        private void NewFileButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(CurrentPath))
+            {
+                MessageBox.Show("You can't create file here!");
+                return;
+            }
+
+            var getNameWindow = new Views.GetItemNameWindow();
+
+            getNameWindow.ShowDialog();
+
+            if (getNameWindow.DialogResult ?? false)
+            {
+                var filePath = Path.Combine(CurrentPath, getNameWindow.NameTextBox.Text);
+
+                if (File.Exists(filePath))
+                {
+                    MessageBox.Show($"File {getNameWindow.NameTextBox.Text} already exists!");
+                    return;
+                }
+
+                using var stream = File.Create(filePath);
+
                 LoadCurrentPath();
             }
         }
