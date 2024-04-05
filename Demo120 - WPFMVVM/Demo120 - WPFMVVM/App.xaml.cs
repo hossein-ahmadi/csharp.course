@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace Demo120___WorkingWithFilesAndFolders
+namespace Demo120___WPFMVVM
 {
     /// <summary>
     /// Interaction logic for App.xaml

@@ -1,0 +1,17 @@
+﻿<Window x:Class="Demo120___WPFMVVM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo120___WPFMVVM"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" FontSize="16">
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBox Name="FirstnameTextBox" Margin="0 0 0 10" Text="{Binding Firstname}" Height="30" VerticalContentAlignment="Center"></TextBox>
+            <TextBox Name="LastnameTextBox" Margin="0 0 0 10" Text="{Binding Lastname}" Height="30" VerticalContentAlignment="Center"></TextBox>
+            <Button Command="{Binding ChangeValuesCommand}" Margin="0 0 0 10" Height="30">Change firstname</Button>
+            <Button Command="{Binding DisplayFullnameCommand}" Height="30">Display fullname</Button>
+        </StackPanel>
+    </Grid>
+</Window>
