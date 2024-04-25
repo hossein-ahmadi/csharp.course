@@ -1,6 +1,7 @@
-﻿using System.Reflection;
-using System.Text;
+﻿using System;
+using System.Reflection;
 using Demo124___ReflectionPart3.DataAccess.MappingAttributes;
+using Demo124___ReflectionPart3.DataAccess.Models;
 using Microsoft.Data.SqlClient;
 
 namespace Demo124___ReflectionPart3.DataAccess.SqlServer;
@@ -9,19 +10,19 @@ public abstract class SqlGenericRepository<T> where T : class, new()
 {
     protected readonly SqlConnection Connection;
 
+    protected readonly EntityMap EntityMap;
+
     public SqlGenericRepository(SqlConnection connection)
     {
         this.Connection = connection;
+        EntityMap = new EntityMap(typeof(T));
     }
 
     public int Count()
     {
         Connection.Open();
 
-        var entityType = typeof(T);
-        var tableAttribute = entityType.GetCustomAttribute(typeof(EntityTableAttribute)) as EntityTableAttribute;
-
-        var command = new SqlCommand($"SELECT COUNT(*) FROM [{tableAttribute.Name}]", Connection);
+        var command = new SqlCommand($"SELECT COUNT(*) FROM [{EntityMap.TableName}]", Connection);
 
         var result = (int)command.ExecuteScalar();
 
@@ -32,29 +33,24 @@ public abstract class SqlGenericRepository<T> where T : class, new()
 
     public void Add(T entity)
     {
-        var entityType = typeof(T);
-        var tableAttribute = entityType.GetCustomAttribute(typeof(EntityTableAttribute)) as EntityTableAttribute;
-
-        var properties = entityType.GetProperties();
-
         List<string> columnNames = new List<string>();
 
         Dictionary<string, SqlParameter> parameters = new Dictionary<string, SqlParameter>();
 
-        for (var index = 0; index < properties.Length; index++)
+        var index = 1;
+        foreach (var propertyItem in EntityMap.Properties)
         {
-            var property = properties[index];
-            if(property.GetCustomAttribute(typeof(IdentityColumnAttribute)) != null)
-                continue;
+            var property = propertyItem.Value;
             columnNames.Add(property.Name);
-            parameters.Add($"p{(index + 1)}", new SqlParameter($"p{(index + 1)}", property.GetValue(entity)));
+            parameters.Add($"p{(index)}", new SqlParameter($"p{(index)}", property.GetValue(entity)));
+            index++;
         }
 
 
         var insertColumnNames = string.Join(", ", columnNames);
         var insertParameters = string.Join(", ", parameters.Select(p => "@" + p.Key));
 
-        var insertStatement = $"INSERT INTO [{tableAttribute.Name}] ({insertColumnNames}) VALUES ({insertParameters})";
+        var insertStatement = $"INSERT INTO [{EntityMap.TableName}] ({insertColumnNames}) VALUES ({insertParameters})";
 
         var command = new SqlCommand(insertStatement, Connection);
 
@@ -69,27 +65,20 @@ public abstract class SqlGenericRepository<T> where T : class, new()
 
     public void Delete(T entity)
     {
-        var entityType = typeof(T);
-        var tableAttribute = entityType.GetCustomAttribute(typeof(EntityTableAttribute)) as EntityTableAttribute;
-
-        var properties = entityType.GetProperties();
-
-        var primaryKeys = properties.Where(p => p.GetCustomAttribute(typeof(PrimaryKeyAttribute)) != null).ToList();
-
         List<string> deleteWhereParts = new List<string>();
         Dictionary<string, object> parameters = new Dictionary<string, object>();
 
         var parametersIndex = 1;
 
-        foreach (var primaryKey in primaryKeys)
+        foreach (var primaryKey in EntityMap.PrimaryKeyProperties)
         {
-            deleteWhereParts.Add($"[{primaryKey.Name}] = @p{parametersIndex}");
-            parameters.Add($"p{parametersIndex}", primaryKey.GetValue(entity));
+            deleteWhereParts.Add($"[{primaryKey.Value.Name}] = @p{parametersIndex}");
+            parameters.Add($"p{parametersIndex}", primaryKey.Value.GetValue(entity));
             parametersIndex++;
         }
 
 
-        var updateStatement = $"DELETE FROM [{tableAttribute.Name}] WHERE {string.Join(" AND ", deleteWhereParts)}";
+        var updateStatement = $"DELETE FROM [{EntityMap.TableName}] WHERE {string.Join(" AND ", deleteWhereParts)}";
 
         Connection.Open();
 
@@ -104,38 +93,28 @@ public abstract class SqlGenericRepository<T> where T : class, new()
 
     public void Update(T entity)
     {
-        var entityType = typeof(T);
-        var tableAttribute = entityType.GetCustomAttribute(typeof(EntityTableAttribute)) as EntityTableAttribute;
-
-        var properties = entityType.GetProperties();
-
-        var primaryKeys = properties.Where(p => p.GetCustomAttribute(typeof(PrimaryKeyAttribute)) != null).ToList();
-
         List<string> updateStatementParts = new List<string>();
         List<string> updateWhereParts = new List<string>();
         Dictionary<string, object> parameters = new Dictionary<string, object>();
 
         var parametersIndex = 1;
-        foreach (var property in properties)
+        foreach (var property in EntityMap.Properties)
         {
-            if (property.GetCustomAttribute(typeof(IdentityColumnAttribute)) != null)
-                continue;
+            updateStatementParts.Add($"[{property.Value.Name}] = @p{parametersIndex}");
 
-            updateStatementParts.Add($"[{property.Name}] = @p{parametersIndex}");
-
-            parameters.Add($"p{parametersIndex}", property.GetValue(entity));
+            parameters.Add($"p{parametersIndex}", property.Value.GetValue(entity));
             parametersIndex++;
         }
 
-        foreach (var primaryKey in primaryKeys)
+        foreach (var primaryKey in EntityMap.PrimaryKeyProperties)
         {
-            updateWhereParts.Add($"[{primaryKey.Name}] = @p{parametersIndex}");
-            parameters.Add($"p{parametersIndex}", primaryKey.GetValue(entity));
+            updateWhereParts.Add($"[{primaryKey.Value.Name}] = @p{parametersIndex}");
+            parameters.Add($"p{parametersIndex}", primaryKey.Value.GetValue(entity));
             parametersIndex++;
         }
 
 
-        var updateStatement = $"UPDATE [{tableAttribute.Name}] SET {string.Join(", ", updateStatementParts)} WHERE {string.Join(" AND ", updateWhereParts)}";
+        var updateStatement = $"UPDATE [{EntityMap.TableName}] SET {string.Join(", ", updateStatementParts)} WHERE {string.Join(" AND ", updateWhereParts)}";
 
         Connection.Open();
 
