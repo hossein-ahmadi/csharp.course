@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Demo128___EFCore.ViewModels;
 
 namespace Demo128___EFCore.Views
 {
@@ -19,9 +20,23 @@ namespace Demo128___EFCore.Views
     /// </summary>
     public partial class LoginView : Window
     {
-        public LoginView()
+        private readonly LoginViewModel viewModel;
+
+        public LoginView(LoginViewModel viewModel, MainWindow mainWindow)
         {
+            this.viewModel = viewModel;
+            this.viewModel.OnSuccessLogin += (sender, args) =>
+            {
+                mainWindow.Show();
+                this.Close();
+            };
+            this.DataContext = this.viewModel;
             InitializeComponent();
+        }
+
+        private void PasswordBox_OnPasswordChanged(object sender, RoutedEventArgs e)
+        {
+            viewModel.Password = ((PasswordBox)sender).Password;
         }
     }
 }

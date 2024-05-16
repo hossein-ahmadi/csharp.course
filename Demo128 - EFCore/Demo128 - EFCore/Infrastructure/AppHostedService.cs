@@ -4,12 +4,10 @@ using Microsoft.Extensions.Hosting;
 
 namespace Demo128___EFCore.Infrastructure;
 
-public class AppHostedService(LoginView loginView) : IHostedService
+public class AppHostedService(LoginView loginView, DbModel.ApplicationDbContext dbContext) : IHostedService
 {
     public Task StartAsync(CancellationToken cancellationToken)
     {
-        var dbContext = new DbModel.ApplicationDbContext();
-        dbContext.Database.EnsureCreated();
         if (dbContext.Users.Count() == 0)
         {
             dbContext.Users.Add(new User()

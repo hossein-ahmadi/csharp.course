@@ -30,6 +30,7 @@
 
   <ItemGroup>
     <Folder Include="DbModel\Entities\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,5 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Windows;
+﻿using System.Windows;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -20,14 +19,20 @@ namespace Demo128___EFCore
 
             AddServices(appBuilder.Services);
 
+
             var host = appBuilder.Build();
+
             await host.RunAsync();
         }
 
         private void AddServices(IServiceCollection services)
         {
-            // Add views
+            services.AddDbContext<DbModel.ApplicationDbContext>(ServiceLifetime.Transient);
+            services.AddTransient<ViewModels.LoginViewModel>();
+
+
             services.AddTransient<Views.LoginView>();
+            services.AddTransient<Views.MainWindow>();
         }
     }
 
