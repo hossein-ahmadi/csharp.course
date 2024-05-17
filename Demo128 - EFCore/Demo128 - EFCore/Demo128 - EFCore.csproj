@@ -30,6 +30,7 @@
 
   <ItemGroup>
     <Folder Include="DbModel\Entities\" />
+    <Folder Include="Services\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
 

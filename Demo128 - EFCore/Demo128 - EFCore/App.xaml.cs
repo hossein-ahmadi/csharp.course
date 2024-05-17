@@ -30,6 +30,7 @@ namespace Demo128___EFCore
             services.AddDbContext<DbModel.ApplicationDbContext>(ServiceLifetime.Transient);
             services.AddTransient<ViewModels.LoginViewModel>();
 
+            services.AddTransient<Services.MembershipServices>();
 
             services.AddTransient<Views.LoginView>();
             services.AddTransient<Views.MainWindow>();

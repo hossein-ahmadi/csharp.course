@@ -2,10 +2,11 @@
 using Demo128___EFCore.Base;
 using System.Windows.Input;
 using Demo128___EFCore.DbModel;
+using Demo128___EFCore.Services;
 
 namespace Demo128___EFCore.ViewModels;
 
-public class LoginViewModel(ApplicationDbContext dbContext) : ViewModelBase
+public class LoginViewModel(ApplicationDbContext dbContext, MembershipServices membership) : ViewModelBase
 {
     private string? username;
     private string? password;
@@ -27,10 +28,9 @@ public class LoginViewModel(ApplicationDbContext dbContext) : ViewModelBase
     public ICommand? LoginCommand => ResolveCommand("LoginCommand", LoginCommandAction, LoginCommandValidator);
 
 
-    private void LoginCommandAction()
+    private async void LoginCommandAction()
     {
-        var user = dbContext.Users.FirstOrDefault(u => u.Username == Username);
-        if (user == null || user.Password != Password)
+        if (!(await membership.UserIsValidAsync(Username, Password)))
         {
             MessageBox.Show("نام کاربری یا کلمه عبور صحیح نمی باشد");
             return;

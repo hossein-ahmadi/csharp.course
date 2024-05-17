@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Demo128___EFCore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240507051608_SeedBookCategoriesData")]
-    partial class SeedBookCategoriesData
+    [Migration("20240517125839_Add_User_PasswordSalt")]
+    partial class Add_User_PasswordSalt
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -106,13 +106,6 @@ namespace Demo128___EFCore.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("BookCategories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Title = "کتاب های داستانی"
-                        });
                 });
 
             modelBuilder.Entity("Demo128___EFCore.DbModel.Entities.Member", b =>
@@ -202,6 +195,12 @@ namespace Demo128___EFCore.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(100)");
 
+                    b.Property<string>("PasswordSalt")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(100)");
+
                     b.Property<DateTime>("RegisterDate")
                         .HasColumnType("datetime2");
 
@@ -222,17 +221,6 @@ namespace Demo128___EFCore.Migrations
                         .IsUnique();
 
                     b.ToTable("Users");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Disabled = false,
-                            Password = "123456",
-                            RegisterDate = new DateTime(2024, 5, 7, 8, 46, 8, 319, DateTimeKind.Local).AddTicks(3804),
-                            Role = "sysadmin",
-                            Username = "admin"
-                        });
                 });
 
             modelBuilder.Entity("BooksAuthors", b =>

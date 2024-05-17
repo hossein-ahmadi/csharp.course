@@ -1,26 +1,18 @@
-﻿using Demo128___EFCore.DbModel.Entities;
-using Demo128___EFCore.Views;
+﻿using Demo128___EFCore.Views;
 using Microsoft.Extensions.Hosting;
 
 namespace Demo128___EFCore.Infrastructure;
 
-public class AppHostedService(LoginView loginView, DbModel.ApplicationDbContext dbContext) : IHostedService
+public class AppHostedService(LoginView loginView, Services.MembershipServices membership) : IHostedService
 {
-    public Task StartAsync(CancellationToken cancellationToken)
+    public async Task StartAsync(CancellationToken cancellationToken)
     {
-        if (dbContext.Users.Count() == 0)
+        if (!(await membership.UserExistsAsync("admin")))
         {
-            dbContext.Users.Add(new User()
-            {
-                Username = "admin",
-                Password = "12345678",
-                RegisterDate = DateTime.Now
-            });
-            dbContext.SaveChanges();
+            await membership.CreateUserAsync("admin", "123456", "sysadmin");
         }
 
         loginView.Show();
-        return Task.CompletedTask;
     }
 
     public Task StopAsync(CancellationToken cancellationToken)

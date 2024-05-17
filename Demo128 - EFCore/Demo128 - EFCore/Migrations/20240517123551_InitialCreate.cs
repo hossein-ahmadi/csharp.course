@@ -17,7 +17,7 @@ namespace Demo128___EFCore.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -30,7 +30,7 @@ namespace Demo128___EFCore.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Title = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -46,6 +46,7 @@ namespace Demo128___EFCore.Migrations
                     NationalCode = table.Column<string>(type: "varchar(10)", unicode: false, maxLength: 10, nullable: false),
                     Firstname = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Lastname = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Fullname = table.Column<string>(type: "nvarchar(max)", nullable: false, computedColumnSql: "[Firstname] + ' ' + [Lastname]"),
                     RegistryDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Mobile = table.Column<string>(type: "varchar(20)", unicode: false, maxLength: 20, nullable: false)
                 },
@@ -78,8 +79,8 @@ namespace Demo128___EFCore.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ISBN = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Title = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    ISBN = table.Column<string>(type: "varchar(20)", unicode: false, maxLength: 20, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -93,19 +94,19 @@ namespace Demo128___EFCore.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "MemberAddress",
+                name: "MembersAddresses",
                 columns: table => new
                 {
                     MemberId = table.Column<int>(type: "int", nullable: false),
-                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PostalCode = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    City = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    PostalCode = table.Column<string>(type: "varchar(10)", unicode: false, maxLength: 10, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MemberAddress", x => x.MemberId);
+                    table.PrimaryKey("PK_MembersAddresses", x => x.MemberId);
                     table.ForeignKey(
-                        name: "FK_MemberAddress_Members_MemberId",
+                        name: "FK_MembersAddresses_Members_MemberId",
                         column: x => x.MemberId,
                         principalTable: "Members",
                         principalColumn: "Id",
@@ -142,9 +143,21 @@ namespace Demo128___EFCore.Migrations
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Books_ISBN",
+                table: "Books",
+                column: "ISBN",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_BooksAuthors_BooksId",
                 table: "BooksAuthors",
                 column: "BooksId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_Username",
+                table: "Users",
+                column: "Username",
+                unique: true);
         }
 
         /// <inheritdoc />
@@ -154,7 +167,7 @@ namespace Demo128___EFCore.Migrations
                 name: "BooksAuthors");
 
             migrationBuilder.DropTable(
-                name: "MemberAddress");
+                name: "MembersAddresses");
 
             migrationBuilder.DropTable(
                 name: "Users");
