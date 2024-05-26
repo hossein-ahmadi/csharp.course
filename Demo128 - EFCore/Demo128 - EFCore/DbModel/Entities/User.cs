@@ -25,6 +25,8 @@ public class Member
     public string Mobile { get; set; }
     
     public MemberAddress MemberAddress { get; set; }
+
+    public List<MemberBook> Books { get; set; }
 }
 
 public class MemberAddress
@@ -64,4 +66,16 @@ public class Book
     public string ISBN { get; set; }
 
     public List<Author> Authors { get; set; }
+    public List<MemberBook> Members { get; set; }
+}
+
+public class MemberBook
+{
+    public int Id { get; set; }
+    public Member Member { get; set; }
+    public int MemberId { get; set; }
+    public Book Book { get; set; }
+    public int BookId { get; set; }
+    public DateTime BorrowDate { get; set; }
+    public DateTime? ReturnDate { get; set; }
 }

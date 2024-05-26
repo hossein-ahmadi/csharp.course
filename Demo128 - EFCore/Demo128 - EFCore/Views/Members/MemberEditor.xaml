@@ -1,0 +1,35 @@
+﻿<Window x:Class="Demo128___EFCore.Views.Members.MemberEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo128___EFCore.Views.Members"
+        mc:Ignorable="d"
+        Title="ویرایش عضو" Height="300" Width="565" FlowDirection="RightToLeft" WindowStartupLocation="CenterScreen">
+    <DockPanel>
+        <StackPanel Margin="10" DockPanel.Dock="Bottom" Height="40" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Width="100" Margin="5">صرفنظر</Button>
+            <Button Width="100" Margin="5" Command="{Binding AcceptChangesCommand}">ثبت</Button>
+        </StackPanel>
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" VerticalAlignment="Center">کد ملی</Label>
+            <TextBox Text="{Binding NationalCode}" Name="UsernameTextBox" Grid.Column="1" TabIndex="0" FlowDirection="LeftToRight" Grid.Row="0" Margin="5" VerticalAlignment="Center" Height="30" VerticalContentAlignment="Center"></TextBox>
+            <Label Grid.Column="0" Grid.Row="1" VerticalAlignment="Center">نام</Label>
+            <TextBox TextAlignment="Right" Text="{Binding Firstname}" Grid.Column="1" Grid.Row="1" TabIndex="1" FlowDirection="LeftToRight" Margin="5" VerticalAlignment="Center" Height="30" VerticalContentAlignment="Center"></TextBox>
+            <Label Grid.Column="0" Grid.Row="2" VerticalAlignment="Center">نام خانوادگی</Label>
+            <TextBox TextAlignment="Right" Text="{Binding Lastname}" Grid.Column="1" Grid.Row="2" TabIndex="1" FlowDirection="LeftToRight" Margin="5" VerticalAlignment="Center" Height="30" VerticalContentAlignment="Center"></TextBox>
+            <Label Grid.Column="0" Grid.Row="3" VerticalAlignment="Center">شماره تماس</Label>
+            <TextBox Text="{Binding Mobile}" Grid.Column="1" Grid.Row="3" TabIndex="1" FlowDirection="LeftToRight" Margin="5" VerticalAlignment="Center" Height="30" VerticalContentAlignment="Center"></TextBox>
+        </Grid>
+    </DockPanel>
+</Window>

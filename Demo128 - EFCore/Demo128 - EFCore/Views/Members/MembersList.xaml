@@ -1,0 +1,25 @@
+﻿<Window x:Class="Demo128___EFCore.Views.Members.MembersList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo128___EFCore.Views.Members"
+        mc:Ignorable="d"
+        Title="مدیریت اعضاء" Height="450" Width="800" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" FlowDirection="RightToLeft">
+    <DockPanel LastChildFill="True">
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" FlowDirection="LeftToRight">
+            <Button Width="100" Height="30" Margin="5" Name="AddNewMemberButton" Click="AddNewMemberButton_OnClick">عضو جدید</Button>
+            <Button Width="100" Height="30" Margin="5" Name="EditMemberWindow" Click="EditMemberWindow_OnClick">ویرایش</Button>
+            <Button Width="100" Height="30" Margin="5" Name="DeleteMemberButton" Click="DeleteMemberButton_OnClick">حذف</Button>
+        </StackPanel>
+        <DataGrid Name="MembersDataGrid" ItemsSource="{Binding Members}" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="کد ملی" Binding="{Binding NationalCode}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="نام" Binding="{Binding Firstname}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="نام خانوادگی" Binding="{Binding Lastname}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="تاریخ ثبت نام" Binding="{Binding RegistryDate}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="شماره تماس" Binding="{Binding Mobile}" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</Window>

@@ -10,6 +10,7 @@ public class ApplicationDbContext(IConfiguration configuration) : DbContext
     public DbSet<Entities.Author> Authors { get; set; }
     public DbSet<Entities.BookCategory> BookCategories { get; set; }
     public DbSet<Entities.Book> Books { get; set; }
+    public DbSet<Entities.MemberBook> MembersBooks { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Demo128___EFCore.Views"
         mc:Ignorable="d"
-        Title="برنامه مدیریت کتابخانه" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterOwner">
-    <Grid>
-        
-    </Grid>
+        FlowDirection="RightToLeft"
+        Title="برنامه مدیریت کتابخانه" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterOwner" FontSize="16">
+    <DockPanel LastChildFill="True">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="اطلاعات پایه">
+                <MenuItem Header="اعضاء" Name="MembersMenuItem" Click="MembersMenuItem_OnClick"></MenuItem>
+                <MenuItem Header="نویسنده ها" Name="AuthorsMenuItem" Click="AuthorsMenuItem_OnClick"></MenuItem>
+                <MenuItem Header="دسته بندی کتاب ها" Name="BookCategoriesMenuItem" Click="BookCategoriesMenuItem_OnClick"></MenuItem>
+                <MenuItem Header="کتاب ها"></MenuItem>
+                <MenuItem Header="خروج"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <DataGrid ItemsSource="{Binding Items}" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Firstname}" Header="نام" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Lastname}" Header="نام خانوادگی" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
 </Window>

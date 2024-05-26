@@ -1,0 +1,21 @@
+﻿<Window x:Class="Demo128___EFCore.Views.BookCategories.BookCategoriesList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo128___EFCore.Views.BookCategories"
+        mc:Ignorable="d"
+        Title="مدیریت دسته بندی کتاب ها" Height="450" Width="800" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" FlowDirection="RightToLeft">
+    <DockPanel LastChildFill="True">
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" FlowDirection="LeftToRight">
+            <Button Width="150" Height="30" Margin="5" Name="AddNewBookCategoryButton" Click="AddNewBookCategory_Click">دسته بندی جدید جدید</Button>
+            <Button Width="100" Height="30" Margin="5" Name="EditBookCategoryWindow" Click="EditBookCategoryWindow_Click">ویرایش</Button>
+            <Button Width="100" Height="30" Margin="5" Name="DeleteBookCategoryButton" Click="DeleteBookCategoryButton_Click">حذف</Button>
+        </StackPanel>
+        <DataGrid Name="BookCategoriesDataGrid" ItemsSource="{Binding Categories}" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="نام" Binding="{Binding Title}" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</Window>

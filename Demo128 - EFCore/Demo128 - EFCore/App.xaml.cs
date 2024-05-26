@@ -29,11 +29,24 @@ namespace Demo128___EFCore
         {
             services.AddDbContext<DbModel.ApplicationDbContext>(ServiceLifetime.Transient);
             services.AddTransient<ViewModels.LoginViewModel>();
+            services.AddTransient<ViewModels.MainViewModel>();
+            services.AddTransient<ViewModels.Members.MemberListViewModel>();
+            services.AddTransient<ViewModels.Members.MemberEditorViewModel>();
+            services.AddTransient<ViewModels.Authors.AuthorsListViewModel>();
+            services.AddTransient<ViewModels.Authors.AuthorEditorViewModel>();
+            services.AddTransient<ViewModels.BookCategories.BookCategoriesListViewModel>();
+            services.AddTransient<ViewModels.BookCategories.BookCategoryEditorViewModel>();
 
             services.AddTransient<Services.MembershipServices>();
 
             services.AddTransient<Views.LoginView>();
             services.AddTransient<Views.MainWindow>();
+            services.AddTransient<Views.Members.MembersList>();
+            services.AddTransient<Views.Members.MemberEditor>();
+            services.AddTransient<Views.Authors.AuthorsList>();
+            services.AddTransient<Views.Authors.AuthorEditor>();
+            services.AddTransient<Views.BookCategories.BookCategoriesList>();
+            services.AddTransient<Views.BookCategories.BookCategoryEditor>();
         }
     }
 

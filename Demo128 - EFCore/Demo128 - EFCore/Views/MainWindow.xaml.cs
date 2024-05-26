@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Demo128___EFCore.DbModel.Entities;
+using Demo128___EFCore.Views.Members;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Demo128___EFCore.Views
 {
@@ -19,9 +22,35 @@ namespace Demo128___EFCore.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private readonly IServiceProvider services;
+
+        public MainWindow(ViewModels.MainViewModel viewModel, IServiceProvider services)
         {
+            this.services = services;
+            this.DataContext = viewModel;
+            viewModel.Items.Add(new MemberBook()
+            {
+                Id = 1,
+            });
             InitializeComponent();
+        }
+
+        private void MembersMenuItem_OnClick(object sender, RoutedEventArgs e)
+        {
+            var membersList = services.GetService<Views.Members.MembersList>();
+            membersList.ShowDialog();
+        }
+
+        private void AuthorsMenuItem_OnClick(object sender, RoutedEventArgs e)
+        {
+            var authorsList = services.GetService<Views.Authors.AuthorsList>();
+            authorsList.ShowDialog();
+        }
+
+        private void BookCategoriesMenuItem_OnClick(object sender, RoutedEventArgs e)
+        {
+            var categoriesList = services.GetService<Views.BookCategories.BookCategoriesList>();
+            categoriesList.ShowDialog();
         }
     }
 }

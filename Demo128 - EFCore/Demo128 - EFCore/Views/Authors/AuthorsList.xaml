@@ -1,0 +1,21 @@
+﻿<Window x:Class="Demo128___EFCore.Views.Authors.AuthorsList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo128___EFCore.Views.Authors"
+        mc:Ignorable="d"
+        Title="مدیریت نویسندگان" Height="450" Width="800" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" FlowDirection="RightToLeft">
+    <DockPanel LastChildFill="True">
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" FlowDirection="LeftToRight">
+            <Button Width="100" Height="30" Margin="5" Name="AddNewAuthorButton" Click="AddNewAuthorButton_Click">نویسنده جدید</Button>
+            <Button Width="100" Height="30" Margin="5" Name="EditAuthorWindow" Click="EditAuthorWindow_Click">ویرایش</Button>
+            <Button Width="100" Height="30" Margin="5" Name="DeleteAuthorButton" Click="DeleteAuthorButton_Click">حذف</Button>
+        </StackPanel>
+        <DataGrid Name="AuthorsDataGrid" ItemsSource="{Binding Authors}" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="نام" Binding="{Binding Name}" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</Window>
