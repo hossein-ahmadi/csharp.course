@@ -1,0 +1,37 @@
+﻿<Window x:Class="Demo128___EFCore.Views.Books.BookEditorView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="ویرایشگر کتاب" Height="320" Width="640" FlowDirection="RightToLeft" WindowStartupLocation="CenterScreen">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">دسته بندی کتاب</Label>
+            <ComboBox Grid.Row="0" Grid.Column="1" Height="35" Margin="10" ItemsSource="{Binding Categories}" DisplayMemberPath="Title" SelectedValue="{Binding Category}" />
+
+            <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">عنوان کتاب</Label>
+            <TextBox Grid.Row="1" Grid.Column="1" Height="35" Margin="10" Text="{Binding Title}" />
+
+            <Label Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">نویسنده</Label>
+            <ComboBox Grid.Row="2" Grid.Column="1" Height="35" Margin="10"  ItemsSource="{Binding Authors}" DisplayMemberPath="Name" SelectedValue="{Binding Author}"/>
+
+            <Label Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">شابک</Label>
+            <TextBox Grid.Row="3" Grid.Column="1" Height="35" Margin="10" Text="{Binding ISBN}" />
+        </Grid>
+        <StackPanel Margin="10" DockPanel.Dock="Bottom" Orientation="Horizontal" FlowDirection="LeftToRight">
+            <Button Height="35" Width="120" Margin="0 0 10 0" Command="{Binding SubmitChangesCommand}">ثبت اطلاعات</Button>
+            <Button Height="35" Width="120">صرفنظر</Button>
+        </StackPanel>
+    </DockPanel>
+</Window>

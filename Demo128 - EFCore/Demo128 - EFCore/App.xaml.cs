@@ -36,6 +36,8 @@ namespace Demo128___EFCore
             services.AddTransient<ViewModels.Authors.AuthorEditorViewModel>();
             services.AddTransient<ViewModels.BookCategories.BookCategoriesListViewModel>();
             services.AddTransient<ViewModels.BookCategories.BookCategoryEditorViewModel>();
+            services.AddTransient<ViewModels.Books.BooksListViewModel>();
+            services.AddTransient<ViewModels.Books.BookEditorViewModel>();
 
             services.AddTransient<Services.MembershipServices>();
 
@@ -47,6 +49,8 @@ namespace Demo128___EFCore
             services.AddTransient<Views.Authors.AuthorEditor>();
             services.AddTransient<Views.BookCategories.BookCategoriesList>();
             services.AddTransient<Views.BookCategories.BookCategoryEditor>();
+            services.AddTransient<Views.Books.BooksListView>();
+            services.AddTransient<Views.Books.BookEditorView>();
         }
     }
 

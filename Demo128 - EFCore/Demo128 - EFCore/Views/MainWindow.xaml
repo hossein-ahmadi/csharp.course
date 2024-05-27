@@ -13,7 +13,7 @@
                 <MenuItem Header="اعضاء" Name="MembersMenuItem" Click="MembersMenuItem_OnClick"></MenuItem>
                 <MenuItem Header="نویسنده ها" Name="AuthorsMenuItem" Click="AuthorsMenuItem_OnClick"></MenuItem>
                 <MenuItem Header="دسته بندی کتاب ها" Name="BookCategoriesMenuItem" Click="BookCategoriesMenuItem_OnClick"></MenuItem>
-                <MenuItem Header="کتاب ها"></MenuItem>
+                <MenuItem Header="کتاب ها" Name="BooksMenuItem" Click="BooksMenuItem_OnClick"></MenuItem>
                 <MenuItem Header="خروج"></MenuItem>
             </MenuItem>
         </Menu>

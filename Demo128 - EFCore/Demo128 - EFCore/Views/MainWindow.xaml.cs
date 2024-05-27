@@ -52,5 +52,11 @@ namespace Demo128___EFCore.Views
             var categoriesList = services.GetService<Views.BookCategories.BookCategoriesList>();
             categoriesList.ShowDialog();
         }
+
+        private void BooksMenuItem_OnClick(object sender, RoutedEventArgs e)
+        {
+            var booksList = services.GetService<Views.Books.BooksListView>();
+            booksList.ShowDialog();
+        }
     }
 }
