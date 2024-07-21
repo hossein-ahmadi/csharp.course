@@ -51,4 +51,34 @@ public class HomeController : ControllerBase
 
         return new { status = "ok" };
     }
+
+    [HttpGet("/protected/get/{id}")]
+    public ActionResult<object> Protected(int id)
+    {
+        if (!Request.Headers.ContainsKey("apikey") || Request.Headers["apikey"] != "123456")
+        {
+            Response.StatusCode = 403;
+            return new
+            {
+                status = "invalid"
+            };
+        }
+
+        return new
+        {
+            id,
+            status = "ok"
+        };
+    }
+
+    [HttpPost("users/add/avatar")]
+    public ActionResult<object> UploadFile(IFormFile file)
+    {
+        return new
+        {
+            length = file.Length,
+            name = file.FileName,
+            status = "ok"
+        };
+    }
 }
